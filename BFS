@@ -1,0 +1,52 @@
+public class Node{
+  private int data;
+  private boolean visited;
+  private List<Node> neighbour;
+  
+  public int getData(){
+    return data;
+  }
+  
+  public void setData(int data){
+    this.data = data;
+  }
+  
+  public boolean isVisited(){
+    return visited;
+  }
+  
+  public void setVisited(boolean visited){
+    this.visited = visited;
+  }
+  
+  public List<Node> getNeighbour(){
+    return neighbour;
+  }
+  
+  public void setNeighbour(List<Node> neighbour){
+    this.neighbour = neighbour;
+  }
+}
+
+public class BFS{
+  private Queue<Node> queue = new LinkedList<Node>();
+  
+  public void levelOrderTraversal(Node node){
+    if(null == node)
+     return;
+    queue.add(node);
+    queue.isVisited(true);
+    
+    while(!queue.isEmpty()){
+      Node vistedNode = queue.remove();
+      System.out.println(node);
+      
+      for(Node neighbour : visitedNode.getNeighbour()){
+        if(null != neighbour && !neighbour.isVisited()){
+          queue.add(neighbour);
+          neighbour.isVisited(true);
+        }
+      }
+    }
+  }  
+}
