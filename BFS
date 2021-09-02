@@ -7,7 +7,7 @@ public class BFS{
     if(null == node)
      return;
     queue.add(node);
-    queue.isVisited(true);
+    queue.setVisited(true);
     
     while(!queue.isEmpty()){
       Node vistedNode = queue.remove();
@@ -16,7 +16,7 @@ public class BFS{
       for(Node neighbour : visitedNode.getNeighbour()){
         if(null != neighbour && !neighbour.isVisited()){
           queue.add(neighbour);
-          neighbour.isVisited(true);
+          neighbour.setVisited(true);
         }
       }
     }
