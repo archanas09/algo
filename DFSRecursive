@@ -1,0 +1,15 @@
+import algo.Node;
+
+class DFSRecursive {
+  public void dfs(Node node){
+    if(null == node)
+      return;
+    System.out.println(node);
+    node.setVisited(true);
+    for(Node neighbour : node.getNeighbour()){
+      if(null != neighbour && !neighbour.isVisited()){
+        dfs(neighbour);
+      }
+    }
+  }
+}
