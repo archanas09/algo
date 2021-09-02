@@ -1,0 +1,27 @@
+import algo.Node;
+
+class DFSStackImpl{
+  private Stack<Node> stack = new Stack<>();
+  
+  public void dfs(Node node){
+    if(null == node)
+      return;
+      
+    stack.push(node);
+    
+    while(!stack.isEmpty()){
+      Node node = stack.pop();
+      
+      if(!node.isVisited()){
+        System.out.println(node);
+        node.setVisited(true);
+      }
+      
+      for(Node neighbour : node.getNeighbour()){
+        if(null != node && !node.isVisited()){
+          stack.push(node);
+        }
+      }      
+    }
+  }
+}
